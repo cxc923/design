@@ -1,4 +1,4 @@
-#签名设计
+#signature design
 
 python爬虫+tkinter制作签名设计小工具
 
