@@ -1,4 +1,4 @@
-# design
+#签名设计
 python爬虫+tkinter制作签名设计小工具
 
 项目简介：
