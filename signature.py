@@ -25,9 +25,7 @@ def Get_sign():
     if name == "":
         messagebox.showinfo('提示', '请输入需要设计的名称')
     else:
-
         fontsIndex = Fonts()  # 索引
-
         # 模拟浏览器post数据，浏览器里面的关键索引
         data = {
             'id': name,
@@ -66,6 +64,7 @@ def Get_sign():
 
 
 def clean():
+    """清空文本框以及弹出提示框"""
     name = Entry1.get()
     name = name.strip()
     if name == "":
@@ -74,26 +73,28 @@ def clean():
 
 
 def window_quit():
+    """点击退出软件按钮时，弹出提示框"""
     messagebox.showinfo('小提示', '设计好的图片和程序在同一路径下，自行筛选。')
     window.quit()
 
 
 if __name__ == '__main__':
-    # 1.创建一个窗口
+    # 签名设计工具界面设计
+    # 实例化object，建立窗口window
     window = tk.Tk()
-    # 2.指定窗体名称
+    # 指定窗体名称
     window.title("签名设计v1.0")
-    # 3.指定窗体大小
+    # 指定窗体大小
     window.geometry('800x500')
-    # 4.禁止最大窗口
+    # 禁止最大窗口
     # windows.resizable(0, 0)
 
+    # 设置Label标签，用于显示一个文本或图像（不可编辑）
     Label1 = tk.Label(window, text='名称:  ', font=('华文新魏', 15), fg='black')
     Label1.grid(row=0)
+    # 设置Entry标签，单行文本框，用于显示一行文本
     Entry1 = tk.Entry(window, font=('华文行楷', 25))
     Entry1.grid(row=0, column=1)
-
-    # 字体模式
     Label2 = tk.Label(window, text='字体选择 ', font=('华文中宋', 10), fg='red')
     Label2.place(height=44, width=127, x=470, y=100)
     var1 = tk.StringVar()
@@ -110,4 +111,5 @@ if __name__ == '__main__':
     Button2.place(height=30, width=100, x=204, y=82)
     Button3 = tk.Button(window, text='清空', font=('隶书', 15), command=clean, fg='black')
     Button3.place(height=30, width=70, x=500, y=10)
+    # 主窗口循环显示
     window.mainloop()
